@@ -8,6 +8,8 @@
 
 <link href="css/Estilo_Error.css" rel="stylesheet" type="text/css">
 
+<link rel="stylesheet" type="text/css" href="calendario/tcal.css" />
+<script type="text/javascript" src="calendario/tcal.js"></script>
 
 
 
@@ -31,7 +33,7 @@
 <!-- ALTA EMPLEADO -->
 <body>
    <center>
-  <form id="form1" name="form1" method="post" action="RegistroAlumno.php">  
+  <form id="form1" name="form1" method="post" enctype="multipart/form-data" action="alta-de-empleado_process.php">  
   <strong><h3>ALTA DE PERSONAL</h3></strong>
   <table width="68%" border="0" align="center" class="down1">
   
@@ -52,7 +54,7 @@
   </tr>
   
   <tr>
-  <td align="right">Apellido Paterno:</td>
+  <td align="right">Apellido Materno:</td>
   <td>
   <span id="sprytextfield3">
   <input name="apellidos2" class="caja" onkeypress="return soloLetras(event)" type="text" id="apellidos" size="28" autocomplete="off">
@@ -61,6 +63,12 @@
   </tr>
   
   <tr>
+  <td align="right">Foto:</td>
+  <td>
+  <input type="file" name="foto" id="foto" /><input type="submit" name="cam" value="WebCam"/>
+  </td>
+  </tr>
+  <tr>
   <td align="right">Email:</td>
   <td><span id="sprytextfield4">
   <input name="email" class="caja" onblur="validarEmail(this.value)" type="text" id="email" size="28" autocomplete="off">
@@ -68,27 +76,40 @@
   </tr>
   
   <tr>
-  <td align="right">Puesto:</td>
+  <td align="right">Puesto/Área:</td>
   <td><span id="sprytextfield4">
-  <input name="puesto" class="caja" onblur="validarEmail(this.value)" type="text" id="email" size="28" autocomplete="off">
+  <select name="puesto" class="caja" id="puesto">
+    <option value="0"> ==Selecionar== </option>
+    <option value="1">Ventas</option>
+    <option value="2">Edición y Diseño</option>
+    <option value="3">Distribución</option>
+    <option value="4">Contabilidad</option>
+    <option value="5">Administrativo</option>
+    <option value="6">Otro</option>
+  </select>
   <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
   </tr>
 
   <tr>
   <td align="right">Horario:</td>
   <td><span id="sprytextfield4">
-  <input name="horario" class="caja" onblur="validarEmail(this.value)" type="text" id="email" size="28" autocomplete="off">
+  <select name="horario" class="caja" id="email" >
+      <option value="0"> ==Selecionar== </option>
+      <option value="1">8-18 hrs</option>
+      <option value="2">9-19 hrs</option>
+      <option value="3">Abierto</option>
+  </select>
   <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
   </tr>
 
   <tr>
   <td align="right">Fecha de Ingreso:</td>
   <td><span id="sprytextfield4">
-  <input name="fechadeingreso" class="caja" onblur="validarEmail(this.value)" type="text" id="email" size="28" autocomplete="off">
+  <input name="fechadeingreso" type="text" id="fechadeingreso" size="28" class="caja tcal">
   <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
   </tr>
   
-  <tr><td colspan="2"><input type="submit" class="boot" name="guarda" value="GUARDAR"> <input type="reset" class="boot" name="guarda" value="NUEVO"></td></tr>
+  <tr><td colspan="2"><input type="submit" class="boot" name="guarda" value="GUARDAR"> <input type="reset" class="boot" name="guarda" value="Limpiar"></td></tr>
   </tbody></table>
   
  

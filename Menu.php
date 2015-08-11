@@ -14,8 +14,9 @@
 		if($Nivel==1){
 		echo ' <ul id="navigation">';
 		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
-		echo '<li><a href="registraralumno.php" target="admin">Nuevo Empleado</a></li>';
-		echo '<li><a href="listalumnos.php" target="admin">Ver Empleados</a></li>';
+		echo '<li><a href="alta-de-empleado.php" target="admin">Nuevo Empleado</a></li>';
+		echo '<li><a href="consultar-todos-los-empleados.php" target="admin">Ver Empleados (Todos)</a></li>';
+		echo '<li><a href="consultar-empleado.php" target="admin">Ver Empleado (Individual)</a></li>';
 		
 		echo '</ul>';
 		}
@@ -23,8 +24,9 @@
 		if($Nivel==2){
 		echo ' <ul id="navigation">';
 		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
-		echo '<li><a href="nuevocurso.php" target="admin">N/D</a></li>';
-		echo '<li><a href="listacurso.php" target="admin">Ver Historial Asistencias</a></li>';
+		//echo '<li><a href="nuevocurso.php" target="admin">N/D</a></li>';
+		echo '<li><a href="consultar-asistencias.php" target="admin">Ver Asistencias (Por Empleado)</a></li>';
+		echo '<li><a href="consultar-todas-asistencias.php" target="admin">Ver Asistencias (Todos)</a></li>';
 		
 		echo '</ul>';
 		}
@@ -32,8 +34,10 @@
 		if($Nivel==3){
 		echo ' <ul id="navigation">';
 		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
-		echo '<li><a href="asignarcursoalumno.php" target="admin">Checador Inteligente</a></li>';
-		echo '<li><a href="listalumnoscurso.php" target="admin">Ver últimos registros</a></li>';
+		echo '<li><a href="checador.php" target="admin">Checador Inteligente</a></li>';
+		echo '<li><a href="consultar-ultimos-registros.php" target="admin">Ver últimos ingresos</a></li>';
+		//echo '<li><a href="asignarcursoalumno.php" target="admin">Checador Inteligente</a></li>';
+		//echo '<li><a href="listalumnoscurso.php" target="admin">Ver últimos registros</a></li>';
 		
 		echo '</ul>';
 		}

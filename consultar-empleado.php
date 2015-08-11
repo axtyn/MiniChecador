@@ -18,17 +18,48 @@ function eliminar(id){
 <table width="100%">
 		<tr>
 		<td class="down1">
-		<strong><center> LISTA DE EMPLEADOS DE ATENEA PHARMA & BUSINESS CONSULTANT </center></strong>
+		<strong><center> CONSULTAR DETALLE POR EMPLEADO</center></strong>
 		</td>
 		</tr>
                 
-		</table>
+</table>
+
+
+
+<form id="form0" name="form0" method="post" enctype="multipart/form-data" action="?">  
+  <strong><h4>BUSCADOR</h4></strong>
+  <table width="50%" border="0" align="center" class="down1">
+  
+  <tbody>
+  
+  <tr>
+  <td align="right">Buscar por Nombre:</td>
+  <td><span id="sprytextfield1">
+  <input name="nombre" class="caja" onkeypress="return soloLetras(event)" type="text" id="nombre" size="28" autocomplete="off">
+  <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="BUSCANDO POR NO. EMPLEADO"></span></span></td>
+  </tr>
+    
+  <tr>
+  <td align="right">Buscar por No.Empleado:</td>
+  <td><span id="sprytextfield2">
+  <input name="idempleado" class="caja" onkeypress="return soloLetras(event)" type="text" id="idempleado" size="28" autocomplete="off">
+  <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="BUSCANDO POR NOMBRE"></span></span></td>
+  </tr>
+
+    <tr><td colspan="2"><input type="submit" class="boot" name="buscar" value="BUSCAR"></td></tr>
+</form>
+
+
+
+
+
                 
 <table id="table" cellspacing="0" width="100%">
  <thead>
   <tr class="asc" id="head">
    <th></th>
    <th>No.</th>
+   <th>FOTO</th>
    <th>NOMBRE</th>
    <th>APELLIDO PATERNO</th>
    <th>APELLIDO MATERNO</th>
@@ -42,7 +73,7 @@ function eliminar(id){
  <?php 
  include('config.php');
  $contador = 0;
- $sql = "SELECT * FROM empleado order by id_empleado";
+ $sql = "SELECT * FROM empleado WHERE id_empleado = $id";
  $rs  = mysql_query($sql,$conexion);
  if(mysql_num_rows($rs) !=0 ){
 	while($row=mysql_fetch_assoc($rs)){
@@ -61,6 +92,8 @@ function eliminar(id){
 		echo '<img src="imagenes/actions-delete.png" onclick="eliminar('.$row['id_empleado'].')"/>';
 		echo '</td>';
 		echo '<td>'.$contador.'</td>';
+        //echo '<td>'.$row['foto'].'</td>';
+        echo '<td>foto</td>';
 		echo '<td>'.$row['nombre'].'</td>';
 		echo '<td>'.$row['apellido_paterno'].'</td>';
 		echo '<td>'.$row['apellido_materno'].'</td>';

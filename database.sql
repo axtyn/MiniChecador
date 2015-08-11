@@ -1,10 +1,3 @@
-/*
-    Agregar: Foto, Horas trabajadas, horas descontadas
-
- */
-
-
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -26,12 +19,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `empleado` (
   `id_empleado` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `apellido_paterno` varchar(45) NOT NULL,
-  `apellido_materno` varchar(45) NOT NULL,
-  `correo` varchar(45) NOT NULL,
-  `puesto` varchar(45) NOT NULL,
-  `horario` varchar(45) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `apellido_paterno` varchar(30) NOT NULL,
+  `apellido_materno` varchar(30) NOT NULL,
+  `foto` longblob NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `puesto` varchar(30) NOT NULL,
+  `horario` varchar(20) NOT NULL,
   `fecha_ingreso` date NOT NULL,
   PRIMARY KEY (`id_empleado`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
@@ -121,3 +115,8 @@ ALTER TABLE `rel_empleado_asistencia`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+/*TABLA PARA REGISTROS ESTADISTICOS: Horas trabajadas, horas desconetadas, sueldo a la quincena, total a pagar quincena*/
+/*Seria una tabla uno a uno de empleados, una extension */
