@@ -51,7 +51,7 @@ function setIframeHeight( iframeId )
                                
                                     <div class="box tabs themed_box">
                                         <h2 class="box-header">
-										RELOJ CHECADOR DIGITAL
+										SISAP - RELOJ CHECADOR DIGITAL (Versión Beta)
 										</h2>
                                           
                                         

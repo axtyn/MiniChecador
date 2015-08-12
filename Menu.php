@@ -16,8 +16,9 @@
 		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
 		echo '<li><a href="alta-de-empleado.php" target="admin">Nuevo Empleado</a></li>';
 		echo '<li><a href="consultar-todos-los-empleados.php" target="admin">Ver Empleados (Todos)</a></li>';
-		echo '<li><a href="consultar-empleado.php?idempleado=0" target="admin">Ver Empleado (Individual)</a></li>';
-		
+		$none="none";
+		echo '<li><a href="consultar-empleado.php?idempleado=0&nombre=$none&caso=$none" target="admin">Ver Empleado (Individual)</a></li>';
+
 		echo '</ul>';
 		}
 		

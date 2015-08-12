@@ -79,13 +79,13 @@
   <td align="right">Puesto/Área:</td>
   <td><span id="sprytextfield4">
   <select name="puesto" class="caja" id="puesto">
-    <option value="0"> ==Selecionar== </option>
-    <option value="1">Ventas</option>
-    <option value="2">Edición y Diseño</option>
-    <option value="3">Distribución</option>
-    <option value="4">Contabilidad</option>
-    <option value="5">Administrativo</option>
-    <option value="6">Otro</option>
+    <option value=""> ==Selecionar== </option>
+    <option value="Ventas">Ventas</option>
+    <option value="Edición y Diseño">Edición y Diseño</option>
+    <option value="Distribución">Distribución</option>
+    <option value="Contabilidad">Contabilidad</option>
+    <option value="Administrativo">Administrativo</option>
+    <option value="Otro">Otro</option>
   </select>
   <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
   </tr>
@@ -94,10 +94,10 @@
   <td align="right">Horario:</td>
   <td><span id="sprytextfield4">
   <select name="horario" class="caja" id="email" >
-      <option value="0"> ==Selecionar== </option>
-      <option value="1">8-18 hrs</option>
-      <option value="2">9-19 hrs</option>
-      <option value="3">Abierto</option>
+      <option value=""> ==Selecionar== </option>
+      <option value="8-18">8-18 hrs</option>
+      <option value="9-19">9-19 hrs</option>
+      <option value="Abierto">Abierto</option>
   </select>
   <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
   </tr>

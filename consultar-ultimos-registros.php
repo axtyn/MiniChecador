@@ -2,7 +2,7 @@
 <link href="css/tablas.css" rel="stylesheet" type="text/css" />
 <script>
 function inscribir(id){
-	window.location="asignarcursoalumno.php?Id="+id;
+	window.location="checador.php?Id="+id;
 }
 
 </script>
@@ -19,10 +19,11 @@ function inscribir(id){
    <th></th>
    <th>ID</th>
    <th>NOMBRE</th>
-   <th>APELLIDO PATERNO</th>
-   <th>APELLIDO MATERNO</th>
+   <th>APELLIDOS</th>
+   <th>HORARIO</th>
    <th>ULTIMA ACTIVIDAD</th>
-   <th>UBICACIÓN</th>
+   <th>FECHA</th>
+   <th>NOTAS</th>
   </tr>
  </thead>
  <tbody id="tbody">
@@ -46,13 +47,16 @@ function inscribir(id){
 			}
 		}
 		
-		$check_in = "";
-	    #obtenemos cursos que existe.
+		$check_in_1 = "";
+		$check_in_2 = "";
+		$check_in_3 = "";
+		$check_in_4 = "";
+	    #obtenemos asistencias que existe.
 		$sqlrs = "SELECT * FROM asistencia WHERE id_asistencia IN (".$id_asistencia."0)";
 		$rsxs  = mysql_query($sqlrs,$conexion);
 		if(mysql_num_rows($rsxs)!=0){
 			while($rowxs = mysql_fetch_assoc($rsxs)){
-				$check_in = $check_in.$rowxs['actividad'];
+				$check_in_1 = $check_in_1.$rowxs['actividad'];
 			}
 		}else {
                     $check_in  = " ";
@@ -64,9 +68,12 @@ function inscribir(id){
 		echo '</td>';
 		echo '<td>'.$contador.'</td>';
 		echo '<td>'.$row['nombre'].'</td>';
-		echo '<td>'.$row['apellido_paterno'].'</td>';
-		echo '<td>'.$row['apellido_materno'].'</td>';
-		echo '<td>'.$check_in.'</td>';
+		echo '<td>'.$row['apellido_paterno'].' '.$row['apellido_materno'].'</td>';
+		echo '<td>'.$row['horario'].'</td>';
+		echo '<td>'.$check_in_1.'</td>';
+		echo '<td>'.$rowxs['fecha'].'</td>';
+		echo '<td>'.$rowxs['notas'].'</td>';
+		echo '<td>'.$rowxs['ubicacion'].'</td>';
 		echo '</tr>';
 	}
  }else{

@@ -2,25 +2,25 @@
 <link href="css/tablas.css" rel="stylesheet" type="text/css" />
 <script>
 function editar(id){
-	window.location="editaralumno.php?Id="+id;
+    window.location="editaralumno.php?Id="+id;
 }
 function eliminar(id){
         var mensaje = "ESTAS SEGURO QUE QUIERES ELIMINAR";
-	if(confirm(mensaje)){
-		window.location="eliminaralumno.php?Id="+id;
-	}else{
-	
-	}
-	
+    if(confirm(mensaje)){
+        window.location="eliminaralumno.php?Id="+id;
+    }else{
+    
+    }
+    
 }
 </script>
 <small><font color="red">* Al eliminar un Empleado también se elimina su historial de registros.</font></small>
 <table width="100%">
-		<tr>
-		<td class="down1">
-		<strong><center> CONSULTAR DETALLE POR EMPLEADO</center></strong>
-		</td>
-		</tr>
+        <tr>
+        <td class="down1">
+        <strong><center> CONSULTAR DETALLE POR EMPLEADO</center></strong>
+        </td>
+        </tr>
                 
 </table>
 
@@ -31,7 +31,8 @@ function eliminar(id){
   <table width="50%" border="0" align="center" class="down1">
   
   <tbody>
-  
+   <!-- implementar con pestañas en html-->
+   <input type="hidden" name="caso" id="caso" value="busqueda-por-nombre"/>
   <tr>
   <td align="right">Buscar por Nombre:</td>
   <td><span id="sprytextfield1">
@@ -73,47 +74,86 @@ function eliminar(id){
  <?php 
  include('config.php');
  $contador = 0;
+
  $id = $_GET['idempleado'];
- if($id == ""){
-    echo "";
- }
+ $nom = stripslashes($_GET['nombre']);
+ $case = $_GET['caso'];
+
+ if($id == "" and $nom == ""){ 
+  echo "Introduce los datos de búsqueda";
+}
  else
  {
-    
- $sql = "SELECT * FROM empleado WHERE id_empleado = $id";
- $rs  = mysql_query($sql,$conexion);
- if(mysql_num_rows($rs) !=0 ){
-	while($row=mysql_fetch_assoc($rs)){
-		$class="odd";
-		$contador = $contador + 1;	 
-		if($contador%2){$class="even";}
-		
-		
-		
-		
-	
-		
-		echo '<tr class="'.$class.'">';
-		echo '<td>';
-	    echo '<img src="imagenes/actions-edit.png" onclick="editar('.$row['id_empleado'].')"/>  ';
-		echo '<img src="imagenes/actions-delete.png" onclick="eliminar('.$row['id_empleado'].')"/>';
-		echo '</td>';
-		echo '<td>'.$contador.'</td>';
-        //echo '<td>'.$row['foto'].'</td>';
-        echo '<td>foto</td>';
-		echo '<td>'.$row['nombre'].'</td>';
-		echo '<td>'.$row['apellido_paterno'].'</td>';
-		echo '<td>'.$row['apellido_materno'].'</td>';
-		echo '<td>'.$row['correo'].'</td>';
-		echo '<td>'.$row['puesto'].'</td>';
-		echo '<td>'.$row['horario'].'</td>';
-		echo '<td>'.$row['fecha_ingreso'].'</td>';
-		
-		echo '</tr>';
-	}
- }else{
-	echo '<tr><td colspan=7><center>No Existe Registros</center></td></tr>';
- }
+   switch ($case) {
+        case 'busqueda-por-nombre':
+            $sql = "SELECT * FROM empleado WHERE nombre = '$nom'";
+            $rs  = mysql_query($sql,$conexion);
+            if(mysql_num_rows($rs) !=0 ){
+                while($row=mysql_fetch_assoc($rs)){
+                    $class="odd";
+                    $contador = $contador + 1;   
+                    if($contador%2){$class="even";}
+
+                    echo '<tr class="'.$class.'">';
+                    echo '<td>';
+                    echo '<img src="imagenes/actions-edit.png" onclick="editar('.$row['id_empleado'].')"/>  ';
+                    echo '<img src="imagenes/actions-delete.png" onclick="eliminar('.$row['id_empleado'].')"/>';
+                    echo '</td>';
+                    echo '<td>'.$contador.'</td>';
+                    //echo '<td>'.$row['foto'].'</td>';
+                    echo '<td>foto</td>';
+                    echo '<td>'.$row['nombre'].'</td>';
+                    echo '<td>'.$row['apellido_paterno'].'</td>';
+                    echo '<td>'.$row['apellido_materno'].'</td>';
+                    echo '<td>'.$row['correo'].'</td>';
+                    echo '<td>'.$row['puesto'].'</td>';
+                    echo '<td>'.$row['horario'].'</td>';
+                    echo '<td>'.$row['fecha_ingreso'].'</td>';
+                    echo '</tr>';
+                }
+            }else{
+                echo '<tr><td colspan=7><center>No Existe Registros</center></td></tr>';
+            }
+            break;
+        case 'busqueda-por-id':
+            $sql = "SELECT * FROM empleado WHERE WHERE id_empleado = $id";
+            $rs  = mysql_query($sql,$conexion);
+            if(mysql_num_rows($rs) !=0 ){
+                while($row=mysql_fetch_assoc($rs)){
+                    $class="odd";
+                    $contador = $contador + 1;   
+                    if($contador%2){$class="even";}
+
+                    echo '<tr class="'.$class.'">';
+                    echo '<td>';
+                    echo '<img src="imagenes/actions-edit.png" onclick="editar('.$row['id_empleado'].')"/>  ';
+                    echo '<img src="imagenes/actions-delete.png" onclick="eliminar('.$row['id_empleado'].')"/>';
+                    echo '</td>';
+                    echo '<td>'.$contador.'</td>';
+                    //echo '<td>'.$row['foto'].'</td>';
+                    echo '<td>foto</td>';
+                    echo '<td>'.$row['nombre'].'</td>';
+                    echo '<td>'.$row['apellido_paterno'].'</td>';
+                    echo '<td>'.$row['apellido_materno'].'</td>';
+                    echo '<td>'.$row['correo'].'</td>';
+                    echo '<td>'.$row['puesto'].'</td>';
+                    echo '<td>'.$row['horario'].'</td>';
+                    echo '<td>'.$row['fecha_ingreso'].'</td>';
+                    echo '</tr>';
+                }
+            }else{
+                echo '<tr><td colspan=7><center>No Existe Registros</center></td></tr>';
+            }
+
+            break;   
+    }
+
+
+
+
+
+
+
 
  }
  ?>
