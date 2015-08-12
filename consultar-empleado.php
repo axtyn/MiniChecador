@@ -26,7 +26,7 @@ function eliminar(id){
 
 
 
-<form id="form0" name="form0" method="post" enctype="multipart/form-data" action="?">  
+<form id="form0" name="form0" method="get" enctype="multipart/form-data" action="?">  
   <strong><h4>BUSCADOR</h4></strong>
   <table width="50%" border="0" align="center" class="down1">
   
@@ -73,6 +73,13 @@ function eliminar(id){
  <?php 
  include('config.php');
  $contador = 0;
+ $id = $_GET['idempleado'];
+ if($id == ""){
+    echo "";
+ }
+ else
+ {
+    
  $sql = "SELECT * FROM empleado WHERE id_empleado = $id";
  $rs  = mysql_query($sql,$conexion);
  if(mysql_num_rows($rs) !=0 ){
@@ -106,6 +113,8 @@ function eliminar(id){
 	}
  }else{
 	echo '<tr><td colspan=7><center>No Existe Registros</center></td></tr>';
+ }
+
  }
  ?>
  
