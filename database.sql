@@ -85,11 +85,13 @@ INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `rel_empleado_asistencia` (
+  `id_check` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_asistencia` int(10) unsigned DEFAULT NULL,
   `id_empleado` int(10) unsigned DEFAULT NULL,
-  `fecha` date DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
   `notas` varchar(100) NOT NULL,
   `ubicacion` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_check`),
   KEY `FK_rel_empleado_asistencia_1` (`id_empleado`),
   KEY `FK_rel_empleado_asistencia_2` (`id_asistencia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -98,8 +100,8 @@ CREATE TABLE IF NOT EXISTS `rel_empleado_asistencia` (
 -- Volcado de datos para la tabla `rel_empleado_asistencia`
 --
 
-INSERT INTO `rel_empleado_asistencia` (`id_asistencia`, `id_empleado`, `fecha`, `notas`, `ubicacion`) VALUES
-(1, 1, '2015-09-01', '192.168.0.1');
+INSERT INTO `rel_empleado_asistencia` (`id_check`,`id_asistencia`, `id_empleado`, `fecha`, `notas`, `ubicacion`) VALUES
+(1, 1, 1, '2015-01-24 17:15:10','llegue tarde','192.168.0.1');
 
 --
 -- Restricciones para tablas volcadas
@@ -120,3 +122,14 @@ ALTER TABLE `rel_empleado_asistencia`
 
 /*TABLA PARA REGISTROS ESTADISTICOS: Horas trabajadas, horas desconetadas, sueldo a la quincena, total a pagar quincena*/
 /*Seria una tabla uno a uno de empleados, una extension */
+
+
+SELECT e.nombre, e.apellido_paterno, e.apellido_materno, e.horario,
+        a.actividad
+    FROM rel_empleado_asistencia rea
+    INNER JOIN empleado e 
+    INNER JOIN asistencia a
+    ON e.id_empleado = rea.id_empleado
+    ON a.id_asistencia = rea.id_asistencia
+    GROUP BY rea.id_asistencia
+    ORDER BY e.nombre";
