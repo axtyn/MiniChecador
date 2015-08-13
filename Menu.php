@@ -8,7 +8,7 @@
 		echo '<li><a href="Contenido.php?Nivel=0" target="admin" class="last">Inicio</a></li>';
 		echo '<li><a href="Menu.php?Nivel=1">Empleados</a></li>';
 		echo '<li><a href="Menu.php?Nivel=2">Consulta de Registros</a></li>';
-		echo '<li><a href="Menu.php?Nivel=3">Checador E/S</a></li>';
+		echo '<li><a href="Menu.php?Nivel=3A">Checador E/S</a></li>';
 		echo '</ul>';
 		}
 		if($Nivel==1){
@@ -31,10 +31,18 @@
 		
 		echo '</ul>';
 		}
-		
-		if($Nivel==3){
+
+		if($Nivel=='3A'){
 		echo ' <ul id="navigation">';
 		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
+		echo '<li><a href="login-checador.php" target="admin">Checador Inteligente</a></li>';
+		echo '</ul>';
+		}
+		
+		if($Nivel=='3B'){
+		echo ' <ul id="navigation">';
+		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
+		echo '<li><a href="Menu.php?Nivel=3A" class="last">Atras</a></li>';
 		echo '<li><a href="checador.php" target="admin">Checador Inteligente</a></li>';
 		echo '<li><a href="consultar-ultimos-registros.php" target="admin">Ver últimos ingresos</a></li>';
 		//echo '<li><a href="asignarcursoalumno.php" target="admin">Checador Inteligente</a></li>';

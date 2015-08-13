@@ -30,7 +30,7 @@ function inscribir(id){
  <?php 
  include('config.php');
  $contador = 0;	
- $sql = "SELECT e.*, a.*, rea.*
+ $sql = "SELECT e.*, a.actividad, rea.*
 		FROM rel_empleado_asistencia rea
 		INNER JOIN empleado e 
 		ON e.id_empleado = rea.id_empleado

@@ -123,13 +123,11 @@ ALTER TABLE `rel_empleado_asistencia`
 /*TABLA PARA REGISTROS ESTADISTICOS: Horas trabajadas, horas desconetadas, sueldo a la quincena, total a pagar quincena*/
 /*Seria una tabla uno a uno de empleados, una extension */
 
-
-SELECT e.nombre, e.apellido_paterno, e.apellido_materno, e.horario,
-        a.actividad
+SELECT e.*, a.actividad, rea.*
     FROM rel_empleado_asistencia rea
     INNER JOIN empleado e 
-    INNER JOIN asistencia a
     ON e.id_empleado = rea.id_empleado
+    INNER JOIN asistencia a
     ON a.id_asistencia = rea.id_asistencia
     GROUP BY rea.id_asistencia
-    ORDER BY e.nombre";
+    ORDER BY e.nombre"
