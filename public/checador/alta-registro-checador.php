@@ -1,8 +1,8 @@
 <?php
-  //include('../../database/config/index.php');
+  include('../../database/config/index.php');
   $id_asistencia      = $_POST['id_asistencia'];
   $id_empleado        = $_POST['id_empleado'];
-  $fecha              = $_POST['fecha'];
+  $fecha              = $_POST['fecha_actual'];
   $notas              = $_POST['notas'];
   $ubicacion          = $_POST['ubicacion'];
   
@@ -32,7 +32,7 @@ $num=rand(0,$todo);
     <link rel="stylesheet" href="../css/checador.css">
     
    <script type="text/javascript">
-/*
+
 window.onload = function() {
   despegar();
 }
@@ -54,7 +54,7 @@ cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuent
      ignicion = setInterval(cuentaAtras,1000);
 }
 
-*/</script>
+</script>
 </head>
 <body>  
 

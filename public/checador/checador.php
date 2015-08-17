@@ -1,6 +1,11 @@
 <?php
-    //include('../../database/config/index.php');
-    $IDE = $_GET['Id'];
+    include('../../database/config/index.php');
+    $Id = $_GET['Id'];
+    //$format = "Y-m-d H:i:s";
+    //$zona = date_default_timezone_get() ;
+     $time = time();
+     $FechaActual = date("Y-m-d H:i:s", $time);
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -85,10 +90,23 @@
             </div> 
 
             <form id="formulario2" name="form2" method="post" action="alta-registro-checador.php">  
-                <input type="hidden" name="id_empleado" id="id_empleado" value="<?php echo $IDE; ?>"/>
-                <input type="hidden" name="fecha" id="fecha" value"<?php date("Y-m-d H:i:s"); ?> "/>
+                <input type="hidden" name="id_empleado" id="id_empleado" value="<?php echo $Id; ?>"/>
+                <input type="hidden" name="fecha_actual" id="fecha" value="<?php echo $FechaActual; ?> "/>
                 <input type="hidden" name="ubicacion" id="ubicacion" value="Oficina (Business Consultant)"/>
-                <div id="saludo"><script src="../js/saludo.js"> </script> [ <?php echo $IDE; ?> ]</div>
+                <?php
+                    $sql = "SELECT nombre, apellido_paterno, apellido_materno FROM empleado WHERE id_empleado = '$Id'";
+                     $rs  = mysql_query($sql,$conexion);
+                        if(mysql_num_rows($rs) !=0 ){
+                            while($row=mysql_fetch_assoc($rs)){
+                                $nombre_parcial= $row['nombre'].' '.$row['apellido_paterno'];
+                            }    
+                        }else{
+                            echo 'Nombre no Disponible';
+                        }
+
+                ?>
+
+                <div id="saludo"><script src="../js/saludo.js"> </script> <?php echo $nombre_parcial .' [ ' . $Id . ' ]';?></div>
                     <select name="id_asistencia" id="items" autofocus >
                     <option value="0">--- SELECCIONE ACTIVIDAD ---</option>
                       <?php
