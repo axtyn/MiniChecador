@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MUSYS</title>
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/checador.css">
     <script language="JavaScript" type="text/javascript">
     function show5(){
@@ -68,6 +69,11 @@
 </script>
 </head>
 <body onload="mueveReloj()">  
+
+    <div id="help"><img src="../images/arrow-left.png" alt="" class="pulse"></div>
+            
+
+
     <div id="copy">
             <h1>MUSYS (Beta Version 0.06) </h1>
             <h2>Desarrollado por Eduardo M.</h2>

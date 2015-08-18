@@ -2,7 +2,7 @@
 	$dbhost = "localhost";
 	$dbuser = "root";
 	$dbpass = "";
-	$dbname = "my-checador";
+	$dbname = "musys";
 	$conexion = mysql_connect($dbhost, $dbuser, $dbpass) or die ("Error: En la conexion");
 	mysql_select_db($dbname);
 	mysql_query("SET NAMES utf8");

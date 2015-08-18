@@ -35,15 +35,14 @@
 		if($Nivel=='3A'){
 		echo ' <ul id="navigation">';
 		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
-		echo '<li><a href="login-checador.php" target="admin">Checador Inteligente</a></li>';
+		echo '<li><a href="public/checador" target="admin">Checador Inteligente</a></li>';
+		echo '<li><a href="Menu.php?Nivel=3B">Opciones Checador</a></li>';
 		echo '</ul>';
 		}
 		
 		if($Nivel=='3B'){
 		echo ' <ul id="navigation">';
-		echo '<li><a href="Menu.php?Nivel=0" class="last">Inicio</a></li>';
 		echo '<li><a href="Menu.php?Nivel=3A" class="last">Atras</a></li>';
-		echo '<li><a href="checador.php" target="admin">Checador Inteligente</a></li>';
 		echo '<li><a href="consultar-ultimos-registros.php" target="admin">Ver últimos ingresos</a></li>';
 		//echo '<li><a href="asignarcursoalumno.php" target="admin">Checador Inteligente</a></li>';
 		//echo '<li><a href="listalumnoscurso.php" target="admin">Ver últimos registros</a></li>';

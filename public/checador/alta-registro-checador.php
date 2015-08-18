@@ -10,17 +10,66 @@
 
   mysql_query($sql,$conexion);
 
-  $mensajes = array(
-  'Excelente Día', 
-  '¡Ánimo!, este puede ser tu mejor día',
-  'Cada día se escribe una historia nueva',
-  '¡ Hoy puedes ser mejor que ayer !',
-  '¡ Vive al Máximo !',
-  'Hoy regala una sonrisa.'
-);
- 
-$todo=(count($mensajes)-1);
-$num=rand(0,$todo);
+
+switch ($id_asistencia) {
+    case 1:
+        $mensaje = array(
+        'Excelente Día', 
+        '¡Hoy puede ser tu mejor día',
+        'Cada día se escribe una historia nueva',
+        '¡ Hoy puedes ser mejor que ayer !',
+        '¡ Vive al Máximo !',
+        'Hoy regala una sonrisa.'
+        );
+        break;
+    case 3:
+        $mensaje = array(
+        'No tardes mucho', 
+        'Es mejor estar en la oficina',
+        'Regresa pronto'
+        );
+        break;
+    case 4:
+        $mensaje = array(
+        'Buen Provecho', 
+        '¿Me invitas de tu comida?',
+        'Ya es hora de comer !!!',
+        '¡ A recargar energias !',
+        );
+        break;
+    case 5:
+        $mensaje = array(
+        '¡Ánimo!, Ya falta poco para salir', 
+        'Energías Recargadas',
+        'Aún podemos dar un poco más',
+        'Di -No- al mal del puerco',
+        );
+        break;
+    case 6:
+        $mensaje = array(
+        'Ya te habías tardado', 
+        '¡Vamos! aún tienes cosas que hacer.',
+        'Ya estás de vuelta...'
+        );
+        break;
+    case 8:
+        $mensaje= array(
+        '¡ Ha sido un excelente día !', 
+        '¡ Tu descanso es merecido ',
+        'Buen Viaje a casa',
+        '¡ Es tiempo de descansar !'
+        );
+        break;
+    default:
+        $mensaje= array(
+        'OK'
+        ); 
+        break;
+}
+  $todo=(count($mensaje)-1);
+  $num=rand(0,$todo);   
+
+
 ?>
 
 
@@ -66,7 +115,7 @@ cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuent
             </div> 
             <div id="imagen-ok">
               <?php 
-                    echo $mensajes[$num];
+                    echo $mensaje[$num];
                     echo '</br>';
                     echo '</br><img src="../images/correcto.gif" width="150px"/>'; 
               ?>

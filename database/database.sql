@@ -1,5 +1,5 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET time_zone = "-06:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS `empleado` (
 -- Volcado de datos para la tabla `empleado`
 --
 
-INSERT INTO `empleado` (`id_empleado`, `nombre`, `apellido_paterno`, `apellido_materno`, `correo`, `puesto`, `horario`, `fecha_ingreso`) VALUES
-(1, 'Arely', 'Zaepeda', 'Ortiz', 'info@ateneapharma.com','Administrador','9-7','2015-01-01');
+INSERT INTO `empleado` (`id_empleado`, `nombre`, `apellido_paterno`, `apellido_materno`, `foto`, `correo`, `puesto`, `horario`, `fecha_ingreso`) VALUES
+(1, 'Arely', 'Zaepeda', 'Ortiz', 'Foto','info@ateneapharma.com','Administrador','9-7','2015-01-01');
 
 -- --------------------------------------------------------
 
@@ -59,25 +59,25 @@ INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
 (1, 'Inicio de Labores', 'E', 'General');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
-(2, 'Fin de Labores', 'S', 'General');
+(2, 'Cita con Cliente', 'S', 'Ventas');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
-(3, 'Regreso de Comer', 'E', 'General');
+(3, 'Salir de la Oficina', 'S', 'General');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
 (4, 'Salir a Comer', 'S', 'General');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
-(5, 'Entrar a la Oficina', 'E', 'General');
+(5, 'Regreso de Comer', 'E', 'General');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
-(6, 'Salir de la Oficina', 'S', 'General');
+(6, 'Entrar a la Oficina', 'E', 'General');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
 (7, 'Regreso de Cita', 'E', 'Ventas');
 
 INSERT INTO `asistencia` (`id_Asistencia`, `actividad`, `es`, `detalles`) VALUES
-(8, 'Cita con Cliente', 'S', 'Ventas');
+(8, 'Fin de Labores', 'S', 'General');
 -- --------------------------------------------------------
 
 --

@@ -101,12 +101,15 @@
                                 $nombre_parcial= $row['nombre'].' '.$row['apellido_paterno'];
                             }    
                         }else{
-                            echo 'Nombre no Disponible';
+                            echo '<p align="center" style="color: white;"><img src="../images/id-no-existe" alt="ESTE ID NO EXISTE"></p>';
+                            header("refresh:3;url=index.php");
+                            //header('Location: index.php');
+                            //exit;
                         }
 
                 ?>
 
-                <div id="saludo"><script src="../js/saludo.js"> </script> <?php echo $nombre_parcial .' [ ' . $Id . ' ]';?></div>
+                <div id="saludo"><?php if(mysql_num_rows($rs)) echo '<script src="../js/saludo.js"> </script>'.$nombre_parcial .' [ ' . $Id . ' ]'; else echo'';?></div>
                     <select name="id_asistencia" id="items" autofocus >
                     <option value="0">--- SELECCIONE ACTIVIDAD ---</option>
                       <?php
