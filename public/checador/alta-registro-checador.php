@@ -22,6 +22,13 @@ switch ($id_asistencia) {
         'Hoy regala una sonrisa.'
         );
         break;
+    case 2:
+        $mensaje = array(
+        'Suerte con el cliente', 
+        '¡A vender!, eres la esperanza',
+        'Ese cliente es tuyo, ¡Vamos!'
+        );
+        break;
     case 3:
         $mensaje = array(
         'No tardes mucho', 
@@ -57,6 +64,7 @@ switch ($id_asistencia) {
         '¡ Ha sido un excelente día !', 
         '¡ Tu descanso es merecido ',
         'Buen Viaje a casa',
+        '¡Corre! que se viene la lluvia',
         '¡ Es tiempo de descansar !'
         );
         break;
@@ -78,8 +86,8 @@ switch ($id_asistencia) {
 <head>
     <meta charset="UTF-8">
     <title>MUSYS</title>
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/checador.css">
-    
    <script type="text/javascript">
 
 window.onload = function() {
@@ -107,7 +115,7 @@ cuenta = document.getElementById("cuenta"); //elemento donde escribimos la cuent
 </head>
 <body>  
 
-    <div id="interface">
+    <div id="interface" class="fadeIn">
         <div id="container">
             <div id="head">
                 <div id="logo"><img src="../images/Logotipo-Mini.png" width="90px" height="90px" alt="ATENEA PHARMA"></div>

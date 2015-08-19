@@ -12,77 +12,20 @@
 <head>
     <meta charset="UTF-8">
     <title>MUSYS</title>
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/checador.css">
-    <script language="JavaScript" type="text/javascript">
-    function show5(){
-        if (!document.layers&&!document.all&&!document.getElementById)
-        return
-        
-        //FECHA
-        var dayNames = new Array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
-        var monthNames = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
-                           "Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        var dt = new Date();
-        var y  = dt.getYear();
-        // Y2K compliant
-        if (y < 1000) y +=1900;
-        //document.write(dayNames[dt.getDay()] + " " + dt.getDate() + "  " + " de " + " " + monthNames[dt.getMonth()]  + " del " + y);
-         mydatetime=dayNames[dt.getDay()] + " " + dt.getDate() + "  " + " de " + " " + monthNames[dt.getMonth()]  + " del " + y
-
-        //HORA
-
-         var Digital=new Date()
-         var hours=Digital.getHours()
-         var minutes=Digital.getMinutes()
-         var seconds=Digital.getSeconds()
-
-        var dn="PM"
-        if (hours<12)
-        dn="AM"
-        if (hours>12)
-        hours=hours-12
-        if (hours==0)
-        hours=12
-
-         if (minutes<=9)
-         minutes="0"+minutes
-         if (seconds<=9)
-         seconds="0"+seconds
-        //change font size here to your desire
-        myclock="<font size='5' face='Arial' ><b><font size='1'></font>"+hours+":"+minutes+":"
-         +seconds+" "+dn+"</b></font>"
-
-       
-
-        if (document.layers){
-        document.layers.liveclock.document.write(myclock)
-        document.layers.liveclock.document.close()
-        }
-        else if (document.all)
-        liveclock.innerHTML=myclock
-        else if (document.getElementById)
-        document.getElementById("livedatetime").innerHTML=mydatetime
-        document.getElementById("liveclock").innerHTML=myclock
-
-        setTimeout("show5()",1000)
-
-         }
-
-
-        window.onload=show5
-         //-->
-
-
-
-</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1"/>
+    <?php include("../library.php");  ?>
 </head>
 <body onload="mueveReloj()">  
+    <div id="help3"><img src="../images/mensaje-activ.png" alt="" class="pulse"></div>
+
     <div id="copy">
             <h1>MUSYS (Beta Version 0.06) </h1>
             <h2>Desarrollado por Eduardo M.</h2>
     </div>
 
-    <div id="interface">
+    <div id="interface" class="slideDown">
         <div id="container">
             <div id="head">
                 <div id="logo"><img src="../images/Logotipo-Mini.png" width="90px" height="90px" alt="ATENEA PHARMA"></div>
@@ -102,9 +45,10 @@
                             }    
                         }else{
                             echo '<p align="center" style="color: white;"><img src="../images/id-no-existe" alt="ESTE ID NO EXISTE"></p>';
-                            header("refresh:3;url=index.php");
+                            //header('refresh: 5; url=index.php');
                             //header('Location: index.php');
-                            //exit;
+                            echo '<input type="button" style="cursor: pointer;" class="btn" onclick="javascript:window.history.back();" value="Cancelar" /> ';
+                            exit;
                         }
 
                 ?>

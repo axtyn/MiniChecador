@@ -27,6 +27,15 @@
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link href='public/js/shadowbox/shadowbox.css' rel='stylesheet' type='text/css'/>
+<script src='public/js/shadowbox/shadowbox.js' type='text/javascript'></script>
+<script type='text/javascript'>
+Shadowbox.init({
+overlayColor: "#fff",
+overlayOpacity: "0.9",
+});
+</script>
 <title>Alta de Personal</title>
 
 </head>
@@ -38,7 +47,6 @@
   <table width="68%" border="0" align="center" class="down1">
   
   <tbody>
-  
   <tr>
   <td align="right">Nombre:</td>
   <td><span id="sprytextfield1">
@@ -65,9 +73,11 @@
   <tr>
   <td align="right">Foto:</td>
   <td>
-  <input type="file" name="foto" id="foto" /><input type="submit" name="cam" value="WebCam"/>
+  <input type="file" name="foto" id="foto" />
+  <a rel="shadowbox;width=700;height=500" title="Página web" href="webcam-photo.php?nombre"><button>WebCam</button></a>
   </td>
   </tr>
+
   <tr>
   <td align="right">Email:</td>
   <td><span id="sprytextfield4">
@@ -91,13 +101,23 @@
   </tr>
 
   <tr>
-  <td align="right">Horario:</td>
+  <td align="right">Hora Entrada:</td>
   <td><span id="sprytextfield4">
-  <select name="horario" class="caja" id="email" >
+  <select name="hora_entrada" class="caja" id="horae" >
       <option value=""> ==Selecionar== </option>
-      <option value="8-18">8-18 hrs</option>
-      <option value="9-19">9-19 hrs</option>
-      <option value="Abierto">Abierto</option>
+      <option value="8">8 hrs</option>
+      <option value="9">9 hrs</option>
+  </select>
+  <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
+  </tr>
+
+  <td align="right">Hora Salida:</td>
+  <td><span id="sprytextfield4">
+  <select name="hora_salida" class="caja" id="horas" >
+      <option value=""> ==Selecionar== </option>
+      <option value="18">18 hrs</option>
+      <option value="19">19 hrs</option>
+      <option value="0">Indefinido</option>
   </select>
   <span class="textfieldRequiredMsg"><img src="imagenes/error.gif" title="CAMPO VACIO"></span></span></td>
   </tr>

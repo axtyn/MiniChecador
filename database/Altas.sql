@@ -1,5 +1,5 @@
 INSERT INTO `empleado` 
-(`id_empleado`, `nombre`, `apellido_paterno`, `apellido_materno`, `foto`, `correo`, `puesto`, `horario`, `fecha_ingreso`)
+(`id_empleado`, `nombre`, `apellido_paterno`, `apellido_materno`, `foto`, `correo`, `puesto`, `hora_entrada`, `hora_salida`, `fecha_ingreso`)
 VALUES
 (1,
 'Jorge Alberto', 
@@ -8,7 +8,7 @@ VALUES
 'foto', 
 'jorge.romo@ateneapharma.com',
 'Edición y Diseño',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 (2,
@@ -18,7 +18,7 @@ VALUES
 'foto',
 '',
 'Edición y Diseño',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 
@@ -29,7 +29,7 @@ VALUES
 'foto',
 '',
 'Edición y Diseño',
-'8-18',
+'8','18',
 '2014-07-01'
 ),
 (6,
@@ -39,7 +39,7 @@ VALUES
 'foto',
 '',
 'Contabilidad',
-'9-19',
+'9','19',
 '2015-01-01'
 ),
 (7,
@@ -49,7 +49,7 @@ VALUES
 'foto',
 '',
 'Distribución',
-'9-19',
+'9','19',
 '2015-01-01'
 ),
 (8,
@@ -59,7 +59,7 @@ VALUES
 'foto',
 '',
 'Administrativo',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 (9,
@@ -69,7 +69,7 @@ VALUES
 'foto',
 '',
 'Contabilidad',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 (10,
@@ -79,7 +79,7 @@ VALUES
 'foto',
 '',
 'Distribución',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 (11,
@@ -89,7 +89,7 @@ VALUES
 'foto',
 '',
 'Edición y Diseño',
-'9-19',
+'9','19',
 '2015-01-01'
 ),
 (12,
@@ -99,7 +99,7 @@ VALUES
 'foto',
 '',
 'Archivo Digital',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 (14,
@@ -109,7 +109,7 @@ VALUES
 'foto',
 '',
 'Distribución',
-'9-19',
+'9','19',
 '2015-01-01'
 ),
 (18,
@@ -119,7 +119,7 @@ VALUES
 'foto',
 '',
 'Edición y Diseño',
-'9-19',
+'9','19',
 '2015-01-01'
 ),
 (19,
@@ -129,7 +129,7 @@ VALUES
 'foto',
 '',
 'Edición y Diseño',
-'8-18',
+'8','18',
 '2015-01-01'
 ),
 (20,
@@ -139,7 +139,17 @@ VALUES
 'foto',
 '',
 'Edición y Diseño',
-'8-18',
+'8','18',
+'2015-01-01'
+),
+(21,
+'Rafael', 
+'Tolentino',
+'Merida', 
+'foto',
+'',
+'Otro',
+'8','18',
 '2015-01-01'
 ),
 (101,

@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `foto` longblob NOT NULL,
   `correo` varchar(50) NOT NULL,
   `puesto` varchar(30) NOT NULL,
-  `horario` varchar(20) NOT NULL,
+  `hora_entrada` varchar(20) NOT NULL,
+  `hora_salida` varchar(20) NOT NULL,
   `fecha_ingreso` date NOT NULL,
   PRIMARY KEY (`id_empleado`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
@@ -34,8 +35,10 @@ CREATE TABLE IF NOT EXISTS `empleado` (
 -- Volcado de datos para la tabla `empleado`
 --
 
-INSERT INTO `empleado` (`id_empleado`, `nombre`, `apellido_paterno`, `apellido_materno`, `foto`, `correo`, `puesto`, `horario`, `fecha_ingreso`) VALUES
-(1, 'Arely', 'Zaepeda', 'Ortiz', 'Foto','info@ateneapharma.com','Administrador','9-7','2015-01-01');
+INSERT INTO `empleado` (`id_empleado`, `nombre`, `apellido_paterno`, `apellido_materno`, `foto`, `correo`, `puesto`, `hora_entrada`,`hora_salida`, `fecha_ingreso`) VALUES
+(1, 'Arely', 'Zaepeda', 'Ortiz', 'Foto','info@ateneapharma.com','Administrador','9','19','2015-01-01');
+
+alter table `empleado` add `hora_salida` varchar(20) NOT NULL;
 
 -- --------------------------------------------------------
 
